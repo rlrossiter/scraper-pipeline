@@ -1,5 +1,3 @@
-import pytest
-
 from scraper_pipeline.fanout import bestbuy_sku_to_url_fanout
 from scraper_pipeline.models import scrape
 

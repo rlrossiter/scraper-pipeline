@@ -10,13 +10,13 @@ class StateProcessor(object):
     def process(
         self,
         state: page_content.PageContent
-    ) -> state_change_notification.StateChangeNotification: 
+    ) -> state_change_notification.StateChangeNotification:
         """
         Process a page to see if there are any state changes.
 
         If there is no state change, the returned StateChangeNotification is None
         """
-    
+
         # Cheating for now as we will assume the previous page state is 'Sold Out'
         # We could pay attention to previous page state at page_id
         # and create a notification if the state is different from previous page state
