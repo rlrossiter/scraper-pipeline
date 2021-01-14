@@ -1,0 +1,2 @@
+class ConnectionNotEstablishedException(Exception):
+    pass
