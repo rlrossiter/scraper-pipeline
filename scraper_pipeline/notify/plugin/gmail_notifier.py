@@ -31,6 +31,7 @@ class GmailNotifier(object):
 
         msg = message.EmailMessage()
         msg['To'] = to
+        msg['From'] = self._email
         msg['Subject'] = subject
         msg.set_content(body)
 
