@@ -31,20 +31,16 @@ class Notifier(object):
                                        if n.address == sub.address
                                        and n.last_notify_time + sub.wait_seconds > int(time.time())]
             if not has_recent_notification:
-                try:
-                    self._call(
-                        state_change.page_id,
-                        state_change.old_state,
-                        state_change.new_state,
-                        sub.address,
-                        state_change.metadata)
-                    new_notifications.append(notification.Notification(
-                        state_change_notification=state_change,
-                        address=sub.address,
-                        last_notify_time=int(time.time())
-                    ))
-                except Exception:
-                    # ignore any errors that have occurred during the notification process
-                    pass
+                self._call(
+                    state_change.page_id,
+                    state_change.old_state,
+                    state_change.new_state,
+                    sub.address,
+                    state_change.metadata)
+                new_notifications.append(notification.Notification(
+                    page_id=state_change.page_id,
+                    address=sub.address,
+                    last_notify_time=int(time.time())
+                ))
 
         return new_notifications
