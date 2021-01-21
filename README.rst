@@ -7,4 +7,3 @@ Python package used for scraping websites to track certain parts of a web page a
 
 
 * Free software: MIT license
-* Documentation: https://scraper-pipeline.readthedocs.io.
